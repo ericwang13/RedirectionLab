@@ -37,4 +37,19 @@ public class PigLatin {
             return pigLatinSimple(s);
         }
     }
+
+    public static String pigLatinBest(String s) {
+        s = s.toLowerCase();
+
+        char first = s.charAt(0);
+        char last = s.charAt(s.length() - 1);
+
+        if (!Character.isAlphabetic(first)) {
+            return s;
+        } else if (!Character.isAlphabetic(last)) {
+            return pigLatin(s.substring(0, s.length() - 1)) + last;
+        } else {
+            return pigLatin(s);
+        }
+    }
 }
