@@ -4,6 +4,20 @@ import java.util.Scanner;
 
 public class PigLatin {
     public static void main(String[] args) {
+        Scanner fileScan = new Scanner(System.in);
+        String current;
+
+        while (fileScan.hasNextLine()) {
+            Scanner lineScan = new Scanner(fileScan.nextLine());
+            while (lineScan.hasNext()) {
+                current = lineScan.next();
+                System.out.print(pigLatinBest(current) + " ");
+            }
+            System.out.println();
+            lineScan.close();
+        }
+
+        fileScan.close();
     }
 
     public static String pigLatinSimple(String s) {
